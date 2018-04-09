@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- 
+100 Coches entran en A Coruña por Avda. Alcalde Alfonso Molina
+Copyright (C) 2008 Christoph Sommer <christoph.sommer@informatik.uni-erlangen.de>
+Licensed under the Creative Commons Attribution-ShareAlike 2.0 license <http://creativecommons.org/licenses/by-sa/2.0/>
+-->
+<routes>
+   <vType id="vtype0" accel="2.6" decel="4.5" sigma="0.5" length="2.5" minGap="2.5" maxSpeed="14" color="1,1,0"/>
+   <route id="route0" edges="293532056 16269905#0 16269905#1 97211187 166714255 327250977 16269913 16269909 327250987 327250980#0 327250980#1 11841756#0 94057430#0 94057430#1 94057430#2 55200526#1 327250983#0 327250983#1 327250981 55200529 11409874#0 11409874#1 32921604#0 32921604#1 32921604#2 32921604#3 55200520 55200521 11410595#3 96716313#0 96716313#1 11410591 327250993 -94057411 11410584#0 11410584#1 11410584#2"/>
+   <flow id="flow0" type="vtype0" route="route0" begin="0" period="3" number="10"/>
+</routes>

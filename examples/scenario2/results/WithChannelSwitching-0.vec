@@ -1,0 +1,89 @@
+version 2
+run WithChannelSwitching-0-20180408-18:15:27-4051
+attr configname WithChannelSwitching
+attr datetime 20180408-18:15:27
+attr experiment WithChannelSwitching
+attr inifile omnetpp.ini
+attr iterationvars $margin=25
+attr iterationvars2 "$margin=25, $repetition=0"
+attr margin 25
+attr measurement $margin=25
+attr network RSUExampleScenario2
+attr processid 4051
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.coreDebug false
+param **.debug false
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.sensitivity -89dBm
+param *.**.nic.phy80211p.thermalNoise -110dBm
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.useThermalNoise true
+param *.annotations.draw true
+param *.connectionManager.drawMaxIntfDist false
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.sendDirect true
+param *.manager.autoShutdown true
+param *.manager.host "\"localhost\""
+param *.manager.launchConfig "xmldoc(\"Coruna.launchd.xml\")"
+param *.manager.margin ${margin=25}
+param *.manager.port 9999
+param *.manager.updateInterval 1s
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].applType "\"TraCI11p\""
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobilityType.debug true
+param *.node[0].veinsmobility.accidentCount 1
+param *.node[0].veinsmobility.accidentDuration 50s
+param *.node[0].veinsmobility.accidentStart 80s
+param *.playgroundSizeX 9999m
+param *.playgroundSizeY 9999m
+param *.playgroundSizeZ 50m
+param *.rsu[*].appl.beaconInterval 1s
+param *.rsu[*].appl.beaconPriority 3
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].appl.dataPriority 2
+param *.rsu[*].appl.headerLength "80 bit"
+param *.rsu[*].appl.sendBeacons true
+param *.rsu[*].applType "\"TraCIRSU11p\""
+param *.rsu[0].mobility.x "6074.3 + ${margin}"
+param *.rsu[0].mobility.y "6001.1 + ${margin}"
+param *.rsu[0].mobility.z 3
+
+vector 4  RSUExampleScenario2.node[0].veinsmobility  posx  ETV
+vector 5  RSUExampleScenario2.node[0].veinsmobility  posy  ETV
+vector 6  RSUExampleScenario2.node[0].veinsmobility  speed  ETV
+vector 7  RSUExampleScenario2.node[0].veinsmobility  acceleration  ETV
+vector 8  RSUExampleScenario2.node[0].veinsmobility  co2emission  ETV
+vector 11  RSUExampleScenario2.node[1].veinsmobility  posx  ETV
+vector 12  RSUExampleScenario2.node[1].veinsmobility  posy  ETV
+4	30	1	6544.7645515431
+4	92	2	6544.7645515431
+4	155	3	6542.9476746328
+4	218	4	6540.0116517324
+5	30	1	6531.1346674873
+5	92	2	6531.1346674873
+5	155	3	6528.6604084302
+5	218	4	6524.662074139
+6	92	2	3.9572089270348
+6	155	3	5.7922925953529
+6	218	4	7.6194012491274
+7	155	3	1.8350836683181
+7	218	4	1.8271086537745
+8	155	3	3.9690439751639
+8	218	4	4.8734986088453
+11	218	4	6544.7547867117
+12	218	4	6531.1213695459
