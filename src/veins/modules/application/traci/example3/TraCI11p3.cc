@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2016 David Eckhoff <david.eckhoff@fau.de>
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
 //
 // Documentation for these modules is at http://veins.car2x.org/
 //
@@ -18,56 +18,48 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#include "veins/modules/application/traci/TraCIRSU11p.h"
+#include <TraCI11p3.h>
 
-Define_Module(TraCIRSU11p);
+#define MYDEBUG EV
 
-void TraCIRSU11p::initialize(int stage) {
+Define_Module(TraCI11p3);
+
+void TraCI11p3::initialize(int stage) {
     BaseWaveApplLayer::initialize(stage);
 
     if (stage == 0) {
         sentMessage = false;
+        currentSubscribedServiceId = -1;
     }
 }
 
-void TraCIRSU11p::onWSA(WaveServiceAdvertisment* wsa) {
-    //if this RSU receives a WSA for service 42, it will tune to the chan
+void TraCI11p3::onWSA(WaveServiceAdvertisment* wsa) {
     if (wsa->getPsid() == 42) {
         mac->changeServiceChannel(wsa->getTargetChannel());
-    }
-    if (wsa->getPsid() == 43) {
-        mac->changeServiceChannel(wsa->getTargetChannel());
-    }
-}
-
-void TraCIRSU11p::onWSM(WaveShortMessage* wsm) {
-    //this rsu repeats the received traffic update in 2 seconds plus some random delay
-    wsm->setSenderAddress(myId);
-    sendDelayedDown(wsm->dup(), 2 + uniform(0.01,0.2));
-}
-
-void TraCIRSU11p::onBSM(BasicSafetyMessage* bsm) {
-    if (sentMessage == false) {
-        sentMessage = true;
-        WaveShortMessage* wsm = new WaveShortMessage();
-        populateWSM(wsm);
-        wsm->setPsid(43);
-        char* roadId = "97211187";
-        wsm->setWsmData(roadId);
-
-        if (dataOnSch) {
-            startService(Channels::SCH3, 43, "Road Work Information Service");
-            //started service and server advertising, schedule message to self to send later
-            scheduleAt(computeAsynchronousSendingTime(1,type_SCH),wsm);
-        }
-        else {
-            //send right away on CCH, because channel switching is disabled
-            sendDown(wsm);
+        currentSubscribedServiceId = wsa->getPsid();
+        if  (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService((Channels::ChannelNumber) wsa->getTargetChannel(), wsa->getPsid(), "Mirrored Traffic Service");
         }
     }
 }
 
-void TraCIRSU11p::handleSelfMsg(cMessage* msg) {
+void TraCI11p3::onWSM(WaveShortMessage* wsm) {
+    findHost()->getDisplayString().updateWith("r=16,green");
+
+    if (wsm->getPsid() == 42) {
+        traciVehicle->setSpeed(7);
+        if (!sentMessage) {
+            sentMessage = true;
+            //repeat the received traffic update once in 2 seconds plus some random delay
+            wsm->setSenderAddress(myId);
+            wsm->setSerial(3);
+            scheduleAt(simTime() + 2 + uniform(0.01,0.2), wsm->dup());
+        }
+    }
+}
+
+void TraCI11p3::handleSelfMsg(cMessage* msg) {
     if (WaveShortMessage* wsm = dynamic_cast<WaveShortMessage*>(msg)) {
         //send this message on the service channel until the counter is 3 or higher.
         //this code only runs when channel switching is enabled
@@ -86,3 +78,4 @@ void TraCIRSU11p::handleSelfMsg(cMessage* msg) {
         BaseWaveApplLayer::handleSelfMsg(msg);
     }
 }
+

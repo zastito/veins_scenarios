@@ -18,7 +18,7 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-#include "veins/modules/application/traci/TraCI11p.h"
+#include "veins/modules/application/traci/example2/TraCI11p.h"
 
 #define MYDEBUG EV
 

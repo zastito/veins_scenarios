@@ -18,11 +18,11 @@
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
 
-package veins_scenarios.src.veins.modules.application.traci;
+package veins_scenarios.src.veins.modules.application.traci.example3;
 import org.car2x.veins.modules.application.ieee80211p.BaseWaveApplLayer;
 
-simple TraCI11p extends BaseWaveApplLayer
+simple TraCI11p3 extends BaseWaveApplLayer
 {
-    @class(TraCI11p);
+    @class(TraCI11p3);
     @display("i=block/app2");
 }

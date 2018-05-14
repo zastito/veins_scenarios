@@ -1,0 +1,187 @@
+file 193464 1526057371                                          
+version 2
+run WithoutChannelSwitching-0-20180511-18:46:36-3470
+attr configname WithoutChannelSwitching
+attr datetime 20180511-18:46:36
+attr experiment WithoutChannelSwitching
+attr inifile omnetpp.ini
+attr iterationvars $margin=25
+attr iterationvars2 "$margin=25, $repetition=0"
+attr margin 25
+attr measurement $margin=25
+attr network RSUExampleScenario3
+attr processid 3470
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.coreDebug false
+param **.debug false
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.sensitivity -89dBm
+param *.**.nic.phy80211p.thermalNoise -110dBm
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.useThermalNoise true
+param *.ambulanceNode[*].appl.beaconInterval 1s
+param *.ambulanceNode[*].appl.dataOnSch false
+param *.ambulanceNode[*].appl.headerLength "80 bit"
+param *.ambulanceNode[*].appl.sendBeacons true
+param *.ambulanceNode[*].applType "\"TraCIAmbulance11p\""
+param *.ambulanceNode[*].veinsmobility.x 0
+param *.ambulanceNode[*].veinsmobility.y 0
+param *.ambulanceNode[*].veinsmobility.z 1.895
+param *.ambulanceNode[*].veinsmobilityType.debug true
+param *.annotations.draw true
+param *.connectionManager.drawMaxIntfDist false
+param *.connectionManager.maxInterfDist 2600m
+param *.connectionManager.sendDirect true
+param *.manager.autoShutdown true
+param *.manager.host "\"localhost\""
+param *.manager.launchConfig "xmldoc(\"Coruna.launchd.xml\")"
+param *.manager.margin ${margin=25}
+param *.manager.moduleName "\"vtype1=ambulanceNode *=node\""
+param *.manager.moduleType "\"vtype1=veins_scenarios.src.veins.nodes.Ambulance *=veins_scenarios.src.veins.nodes.Car\""
+param *.manager.port 9999
+param *.manager.updateInterval 1s
+param *.node[*].appl.beaconInterval 1s
+param *.node[*].appl.dataOnSch false
+param *.node[*].appl.headerLength "80 bit"
+param *.node[*].appl.sendBeacons true
+param *.node[*].applType "\"TraCI11p3\""
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobilityType.debug true
+param *.node[0].veinsmobility.accidentCount 1
+param *.node[0].veinsmobility.accidentDuration 50s
+param *.node[0].veinsmobility.accidentStart 80s
+param *.playgroundSizeX 9999m
+param *.playgroundSizeY 9999m
+param *.playgroundSizeZ 50m
+param *.rsu[*].appl.beaconInterval 1s
+param *.rsu[*].appl.beaconPriority 3
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].appl.dataPriority 2
+param *.rsu[*].appl.headerLength "80 bit"
+param *.rsu[*].appl.sendBeacons true
+param *.rsu[*].applType "\"TraCIRSU11p3\""
+param *.rsu[0].mobility.x "6074.3 + ${margin}"
+param *.rsu[0].mobility.y "6001.1 + ${margin}"
+param *.rsu[0].mobility.z 3
+
+vector 4  RSUExampleScenario3.node[0].veinsmobility  posx  ETV
+vector 5  RSUExampleScenario3.node[0].veinsmobility  posy  ETV
+vector 6  RSUExampleScenario3.node[0].veinsmobility  speed  ETV
+vector 7  RSUExampleScenario3.node[0].veinsmobility  acceleration  ETV
+vector 8  RSUExampleScenario3.node[0].veinsmobility  co2emission  ETV
+vector 11  RSUExampleScenario3.node[1].veinsmobility  posx  ETV
+vector 12  RSUExampleScenario3.node[1].veinsmobility  posy  ETV
+vector 13  RSUExampleScenario3.node[1].veinsmobility  speed  ETV
+vector 14  RSUExampleScenario3.node[1].veinsmobility  acceleration  ETV
+vector 15  RSUExampleScenario3.node[1].veinsmobility  co2emission  ETV
+vector 18  RSUExampleScenario3.node[2].veinsmobility  posx  ETV
+vector 19  RSUExampleScenario3.node[2].veinsmobility  posy  ETV
+vector 20  RSUExampleScenario3.node[2].veinsmobility  speed  ETV
+vector 21  RSUExampleScenario3.node[2].veinsmobility  acceleration  ETV
+vector 22  RSUExampleScenario3.node[2].veinsmobility  co2emission  ETV
+vector 25  RSUExampleScenario3.node[3].veinsmobility  posx  ETV
+vector 26  RSUExampleScenario3.node[3].veinsmobility  posy  ETV
+vector 27  RSUExampleScenario3.node[3].veinsmobility  speed  ETV
+vector 28  RSUExampleScenario3.node[3].veinsmobility  acceleration  ETV
+vector 29  RSUExampleScenario3.node[3].veinsmobility  co2emission  ETV
+vector 32  RSUExampleScenario3.node[4].veinsmobility  posx  ETV
+vector 33  RSUExampleScenario3.node[4].veinsmobility  posy  ETV
+vector 34  RSUExampleScenario3.node[4].veinsmobility  speed  ETV
+vector 35  RSUExampleScenario3.node[4].veinsmobility  acceleration  ETV
+vector 36  RSUExampleScenario3.node[4].veinsmobility  co2emission  ETV
+vector 39  RSUExampleScenario3.node[5].veinsmobility  posx  ETV
+vector 40  RSUExampleScenario3.node[5].veinsmobility  posy  ETV
+vector 41  RSUExampleScenario3.node[5].veinsmobility  speed  ETV
+vector 42  RSUExampleScenario3.node[5].veinsmobility  acceleration  ETV
+vector 43  RSUExampleScenario3.node[5].veinsmobility  co2emission  ETV
+vector 46  RSUExampleScenario3.node[6].veinsmobility  posx  ETV
+vector 47  RSUExampleScenario3.node[6].veinsmobility  posy  ETV
+vector 48  RSUExampleScenario3.node[6].veinsmobility  speed  ETV
+vector 49  RSUExampleScenario3.node[6].veinsmobility  acceleration  ETV
+vector 50  RSUExampleScenario3.node[6].veinsmobility  co2emission  ETV
+vector 53  RSUExampleScenario3.node[7].veinsmobility  posx  ETV
+vector 54  RSUExampleScenario3.node[7].veinsmobility  posy  ETV
+vector 55  RSUExampleScenario3.node[7].veinsmobility  speed  ETV
+vector 56  RSUExampleScenario3.node[7].veinsmobility  acceleration  ETV
+vector 57  RSUExampleScenario3.node[7].veinsmobility  co2emission  ETV
+vector 60  RSUExampleScenario3.node[8].veinsmobility  posx  ETV
+vector 61  RSUExampleScenario3.node[8].veinsmobility  posy  ETV
+vector 62  RSUExampleScenario3.node[8].veinsmobility  speed  ETV
+vector 63  RSUExampleScenario3.node[8].veinsmobility  acceleration  ETV
+vector 64  RSUExampleScenario3.node[8].veinsmobility  co2emission  ETV
+vector 67  RSUExampleScenario3.node[9].veinsmobility  posx  ETV
+vector 68  RSUExampleScenario3.node[9].veinsmobility  posy  ETV
+vector 69  RSUExampleScenario3.node[9].veinsmobility  speed  ETV
+vector 70  RSUExampleScenario3.node[9].veinsmobility  acceleration  ETV
+vector 71  RSUExampleScenario3.node[9].veinsmobility  co2emission  ETV
+vector 74  RSUExampleScenario3.ambulanceNode[10].veinsmobility  posx  ETV
+vector 75  RSUExampleScenario3.ambulanceNode[10].veinsmobility  posy  ETV
+vector 76  RSUExampleScenario3.ambulanceNode[10].veinsmobility  speed  ETV
+vector 77  RSUExampleScenario3.ambulanceNode[10].veinsmobility  acceleration  ETV
+vector 78  RSUExampleScenario3.ambulanceNode[10].veinsmobility  co2emission  ETV
+4	6770 4289 11 121718 1 160 160 5944.4911427608 6544.7645515431 984665.18126555 6063511683.6408
+5	11059 4288 11 121718 1 160 160 5734.0240246933 6531.1346674873 973813.98160766 5933624449.0843
+6	15347 2980 34 121718 2 160 159 0 13.998514430835 1031.4487171015 11065.019260678
+7	18327 3067 57 121718 3 160 158 -4.5 2.3466330689648 2.9050407012025 137.50321716599
+8	21394 3655 57 121718 3 160 158 0.973 8.2287933875323 281.14465175604 768.8404167412
+11	25049 4422 80 121718 4 160 157 5900.5226270032 6544.7547867117 962048.47974877 5900316045.6446
+12	29471 4423 80 121718 4 160 157 5598.1148743377 6531.1213695459 946159.26435634 5714212503.0332
+13	33894 2632 128 121718 5 160 156 4.0425376740037 13.999992804453 1250.4145249779 10969.281176172
+14	36526 2678 176 121718 6 160 155 -4.5 2.0059184591635 2.9574623259963 48.259074213151
+15	39204 4105 176 121718 6 160 155 0.973 8.3312879690391 266.28544145656 587.97923172673
+18	43309 4348 224 121718 7 160 154 5900.4341422147 6544.7411069386 945094.44598708 5805089192.8216
+19	47657 4346 224 121718 7 160 154 5597.9956292167 6531.1027401593 931287.68981187 5643208646.4905
+20	52003 2545 309 121718 8 160 153 4.0617275998512 13.986232199401 1210.3972085278 10411.205053008
+21	54548 2567 394 121718 9 160 152 -4.5 2.0736510576936 2.9382724001488 45.448699079428
+22	57115 4039 394 121718 9 160 152 0.973 8.7834912543851 258.53010411968 572.85678041527
+25	61154 4269 479 121718 10 160 151 5900.4695424679 6544.7377055239 928568.35673455 5715086649.4306
+26	65423 4272 479 121718 10 160 151 5610.7767810283 6531.0981080452 916830.6501242 5577141014.2475
+27	69695 2468 613 121718 11 160 150 3.8961603405194 13.960404336064 1167.4743466492 9807.0029528387
+28	72163 2482 747 121718 12 160 149 -4.5 2.0599531442043 3.1038396594806 45.591255924644
+29	74645 3959 747 121718 12 160 149 0.973 8.3437597808429 252.72022307155 554.89882347383
+32	78604 4194 881 121718 13 160 148 5904.5868409624 6544.7430498517 912173.44739903 5626658816.3711
+33	82798 4193 881 121718 13 160 148 5649.8498481452 6531.1053860569 902075.10345167 5507645684.6282
+34	86991 2404 1076 121718 14 160 147 4.0668918506048 13.975882674009 1126.510519255 9241.4246816554
+35	89395 2429 1271 121718 15 160 146 -4.5 2.0955173481698 2.9331081493952 45.563790973003
+36	91824 3885 1271 121718 15 160 146 0.973 8.2301774682404 246.57630085403 546.17739538103
+39	95709 4109 1466 121718 16 160 145 5920.0170904001 6544.7425149587 895865.47005225 5539375959.3966
+40	99818 4106 1466 121718 16 160 145 5688.3780360888 6531.1046576289 887214.84723772 5437105450.582
+41	103924 2323 1734 121718 17 160 144 4.2377729746926 13.969054342322 1084.721604112 8657.4161674647
+42	106247 2340 2002 121718 18 160 143 -4.5 2.0388719738973 2.7622270253074 44.619472709031
+43	108587 3792 2002 121718 18 160 143 0.973 8.4244909498383 239.77165573827 530.15291757716
+46	112379 4032 2270 121718 19 160 142 5938.8850876781 6544.741307063 879540.99454211 5451991385.0806
+47	116411 4035 2270 121718 19 160 142 5723.5396651299 6531.1030126927 872192.2205595 5364810305.1322
+48	120446 2243 2623 121718 20 160 141 4.1068911542083 13.954572761587 1042.9378798123 8074.792524028
+49	122689 2247 2976 121718 21 160 140 -4.5 2.133424491873 2.8931088457917 45.104859198543
+50	124936 3715 2976 121718 21 160 140 0.973 7.7943214527289 234.27485674758 513.38650692349
+53	128651 3956 3329 121718 22 160 139 5959.0960688628 6544.7386085527 863354.45703858 5366420439.5843
+54	132607 3956 3329 121718 22 160 139 5761.6380897277 6531.0993378078 857181.19081788 5292882450.6855
+55	136563 2146 3779 121718 23 160 138 4.13879222779 13.991539277635 1000.5699872599 7480.9229314508
+56	138709 2131 4229 121718 24 160 137 -4.5 1.9641369037377 2.86120777221 44.191754872151
+57	140840 3639 4229 121718 24 160 137 0.973 7.9024276165124 227.85859764759 498.20108571187
+60	144479 3876 4679 121718 25 160 136 5978.7542669901 6544.7461614363 847081.58660776 5279898818.4356
+61	148355 3875 4679 121718 25 160 136 5799.3130381912 6531.1096234746 841982.37418546 5218877510.1985
+62	152230 2068 5238 121718 26 160 135 3.9869988851105 13.703033889699 957.92691496093 6886.0046701727
+63	154298 2045 5797 121718 27 160 134 -4.5 2.0670007691276 3.0130011148895 44.016106148736
+64	156343 3559 5797 121718 27 160 134 0.973 8.8348586731836 221.24819338737 490.74650954522
+67	159902 3792 6356 121718 28 160 133 5992.9173710739 6544.7439113052 830413.68554234 5188507190.0847
+68	163694 3790 6356 121718 28 160 133 5833.601982387 6531.1065592014 826073.89544438 5136364920.2277
+69	167484 1973 7036 121718 29 160 132 3.9972887510035 7.7062840563824 920.60189123789 6431.1552916241
+70	169457 1962 7724 121718 30 160 131 -0.70628405638239 1.9010296794982 3.0027112489965 7.3814907149992
+71	171419 3486 7724 121718 30 160 131 0.973 4.8818083896437 199.32944577587 321.84957576007
+74	174905 3707 8412 121718 31 160 130 5656.2656725032 6544.7243726821 789293.51519869 4799891287.9381
+75	178612 3714 8412 121718 31 160 130 5597.9329304246 6531.0799511164 779007.57541425 4679701815.4674
+76	182326 3681 9291 121718 32 160 129 4.0242765044417 13.997954029166 1629.5817723841 21447.974282448
+77	186007 3925 10112 121718 33 160 128 -3.374620965067 2.4530982375704 0.64866744411647 116.91780786968
+78	189932 3532 10112 121718 33 160 128 0.973 8.4065279659401 302.59240675713 973.67906158363
