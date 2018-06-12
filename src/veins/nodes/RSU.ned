@@ -28,6 +28,7 @@ module RSU
     parameters:
         string applType; //type of the application layer
         string nicType = default("Nic80211p"); // type of network interface card
+        string veinsmobilityType = default("veins_scenarios.src.veins.modules.application.traci.example4.BaseTraCIMobility"); //type of the mobility module
     gates:
         input veinsradioIn; // gate for sendDirect
     submodules:
@@ -41,7 +42,7 @@ module RSU
                 @display("p=60,166");
         }
 
-        mobility: BaseMobility {
+        veinsmobility: <veinsmobilityType> like org.car2x.veins.base.modules.IMobility {
             parameters:
                 @display("p=130,172;i=block/cogwheel");
         }

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- debug config -->
+<launch>
+	<copy file="Coruna.net.xml" />
+	<copy file="Coruna.rou.xml" />
+	<copy file="Coruna.tls.xml" />
+	<copy file="Coruna.sumo.cfg" type="config" />
+</launch>
+
